@@ -6,7 +6,7 @@
 #endif
 
 //**************************************************************************************
-//  5KHz ASK transmitter for magnetic loop communications
+//  5KHz ASK transmitter for magnetic loop communications 
 //  Runs on ATMEGA88, ATMEGA168 and ATMEGA328P based boards, possiply others too,
 //  Dzl 2013
 //**************************************************************************************
@@ -21,7 +21,7 @@
 #define N_BIT 120    //-Nbr. of cycles per bit
 
 //---------------------------------
-//  Signal generator
+//  Signal generator 
 //---------------------------------
 
 volatile unsigned char txdone=true;
@@ -46,7 +46,7 @@ SIGNAL(TIMER1_COMPA_vect)
         break;
         TCCR1A=0b00000010;        //-Set up frequency generator
 //      CLR(TCCR1A,7);
-      txstate=1;
+      txstate=1;  
       break;
     case 1:
     case 2:
@@ -74,7 +74,7 @@ SIGNAL(TIMER1_COMPA_vect)
     case 10:
       txstate=0;
       txdone=true;
-      idle=true;
+      idle=true;    
       break;
     }
   }
@@ -126,13 +126,13 @@ public:
   void mute()
   {
     TCCR1A=0b00000010;        //-Set up frequency generator
-    TCCR1B&=0xfe;             //-Stop generator
+//    TCCR1B&=0xfe;             //-Stop generator
   }
 
   void resume()
   {
     TCCR1A=0b10110010;        //-Set up frequency generator
-    TCCR1B|=0x01;             //-Restart generator
+//    TCCR1B|=0x01;             //-Restart generator
   }
 };
 

@@ -81,7 +81,7 @@ public:
     TCCR1B=0x09;
     TCCR1C=0;
 //    OCR1A=2403;
-    OCR1A=2400;
+    OCR1A=2401;
     OCR1B=1200;
     SET(TIMSK1,OCIE1A);
   }
