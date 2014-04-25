@@ -65,7 +65,7 @@ public:
     cnt=1;
     thresh=8.0;
     data_ready=0;
-    analog_channel=0;
+    analog_channel=1;
   }
 //---------------------------------------------------
 //  Set up
